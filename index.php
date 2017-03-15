@@ -4,9 +4,10 @@ session_start();
 <html>
 <head>
   <title>PHP</title>
-
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
   <form action="login.php" method="post">
     <fieldset>
       <legend>Login Up</legend>

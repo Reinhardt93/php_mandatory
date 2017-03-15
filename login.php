@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('dbhandler.php');
-if ($_SERVER["REQUEST_METHOD"] == "POST") && !empty($_POST['user-name']) && !empty($_POST)['password'] {
+if ($_SERVER["REQUEST_METHOD"] == "POST") /*&& !empty($_POST['user-name']) && !empty($_POST)['password']*/ {
 
 $userName   = $_POST['user-name'];
 $password   = $_POST['password'];
