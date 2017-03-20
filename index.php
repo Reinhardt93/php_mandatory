@@ -31,7 +31,7 @@ session_start();
       <input type="text" name="first-name" placeholder="First Name">
       <input type="text" name="last-name" placeholder="Last Name">
       <input type="text" name="user-name" placeholder="User Name">
-      <input type="text" name="email" placehodler="Email">
+      <input type="text" name="email" placeholder="Email">
       <input type="password" name="password" placeholder="password">
       <button type="submit">Sign Up</button>
     </fieldset>

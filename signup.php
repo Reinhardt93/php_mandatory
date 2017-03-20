@@ -8,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     {
 
-//Todo: sanitize the post data
 //Check if the form is posted and the form values are not empty, then run the code.
 //if($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -28,4 +27,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 header ("Location: index.php");
 
+//Todo: sanitize the POST data - Change Code to use Prepared Statements (PDO)
 ?>
