@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") /*&& !empty($_POST['user-name']) && !e
 $userName   = $_POST['user-name'];
 $password   = $_POST['password'];
 
-//Todo: sanitize the post data
+//Todo: sanitize the post data - USE PDO!
 $q = "SELECT * FROM users WHERE username = '$userName' AND password = '$password'";
 
 $result = mysqli_query($dbc, $q);
