@@ -38,7 +38,8 @@ CREATE TABLE IF NOT EXISTS `admins` (
 --
 
 INSERT INTO `admins` (`user_id`, `user_email`, `user_pass`) VALUES
-(1, 'test@test.com', '1234');
+(1, 'awpareshan@gmail.com', 'wali'),
+(2, 'saima@yahoo.com', 'khan');
 
 -- --------------------------------------------------------
 
@@ -126,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `customers` (
 --
 
 INSERT INTO `customers` (`customer_id`, `customer_ip`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`) VALUES
-(6, '119.157.220.50', 'test', 'test@test.com', 'test', 'Denmark', 'city', '2122', 'whatever', 'abdul-wali-ustaad1.jpg');
+(6, '119.157.220.50', 'Abdul Wali', 'awpareshan@gmail.com', 'walikhan', 'Pakistan', 'Karachi', '3243423', 'dfads', 'abdul-wali-ustaad1.jpg');
 
 -- --------------------------------------------------------
 

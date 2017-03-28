@@ -1,6 +1,11 @@
-<?php
-session_start();
-session_destroy();
+<?php 
 
-header("Location: index.php");
+session_start(); 
+
+session_destroy(); 
+
+
+echo "<script>window.open('index.php','_self')</script>";
+
+
 ?>
