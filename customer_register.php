@@ -123,15 +123,8 @@ include("includes/db.php");
 							<td>
 							<select name="c_country">
 								<option>Select a Country</option>
-								<option>Afghanistan</option>
-								<option>India</option>
-								<option>Japan</option>
-								<option>Pakistan</option>
-								<option>Israel</option>
-								<option>Nepal</option>
-								<option>United Arab Emirates</option>
-								<option>United States</option>
-								<option>United Kingdom</option>
+								<option>Denmark</option>
+								<option>Not Denmark</option>
 							</select>
 
 							</td>
