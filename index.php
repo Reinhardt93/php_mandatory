@@ -1,9 +1,10 @@
-<!DOCTYPE>
 <?php
-//session_start();
+session_start();
+
 include("functions/functions.php");
 
 ?>
+<!DOCTYPE>
 <html>
 	<head>
 		<title>My Online Shop</title>
@@ -15,19 +16,7 @@ include("functions/functions.php");
 <body>
 
 	<!--Navigation Bar starts-->
-	<div class="menubar">
-
-		<ul id="menu">
-			<li><a href="index.php">Home</a></li>
-			<li><a href="all_products.php">All Products</a></li>
-			<li><a href="customer/my_account.php">My Account</a></li>
-			<li><a href="#">Sign Up</a></li>
-			<li><a href="cart.php">Shopping Cart</a></li>
-			<li><a href="#">Contact Us</a></li>
-
-		</ul>
-
-	</div>
+<?php require('includes/menu.php') ?>
 	<!--Navigation Bar ends-->
 
 	<!--Main Container starts here-->
@@ -63,7 +52,6 @@ include("functions/functions.php");
 
 						<p>Shopping Cart - Total Items: <?php total_items();?> Total Price: <?php total_price(); ?></p> <a href="cart.php">Go to Cart</a>
 
-
 						<?php
 						if(!isset($_SESSION['customer_email'])){
 
@@ -73,13 +61,7 @@ include("functions/functions.php");
 						else {
 						echo "<a href='logout.php' style='color:orange;'>Logout</a>";
 						}
-
-
-
 						?>
-
-
-
 						</span>
 				</div>
 			</div>
@@ -103,20 +85,13 @@ include("functions/functions.php");
 				<div id="sidebar_title" class="brands">Brands</div>
 
 				<ul id="cats">
-
 					<?php getBrands(); ?>
-
 				<ul>
-
-
 			</div>
 
 			<div id="content_area">
 
 			<?php cart(); ?>
-
-
-
 				<div id="products_box">
 
 				<?php getPro(); ?>
@@ -128,11 +103,6 @@ include("functions/functions.php");
 			</div>
 		</div>
 		<!--Content wrapper ends-->
-
-<div id="footer">
-
-<h2 style="text-align:center; padding-top:30px;">&copy; 2017 Dummy shop</h2>
-
-</div>
+		<?php require('includes/footer.php'); ?>
 </body>
 </html>

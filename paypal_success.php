@@ -2,8 +2,6 @@
 session_start();
 ?>
 
-
-
 <html>
 	<head>
 		<title>Payment Successful!</title>
@@ -162,8 +160,6 @@ session_start();
 			";
 
 			mail($c_email,$subject,$message,$headers);
-
-
 
 ?>
 </body>

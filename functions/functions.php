@@ -1,6 +1,6 @@
 <?php
 // After uploading to online server, change this connection accordingly
-$con = mysqli_connect("localhost","root","root","ecommerce");
+require('./includes/db.php');
 
 if (mysqli_connect_errno())
   {
@@ -27,7 +27,7 @@ function cart(){
 if(isset($_GET['add_cart'])){
 
 	global $con;
-
+  
 	$ip = getIp();
 
 	$pro_id = $_GET['add_cart'];

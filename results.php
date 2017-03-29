@@ -26,17 +26,7 @@ include("functions/functions.php");
 		<!--Header ends here-->
 
 		<!--Navigation Bar starts-->
-		<div class="menubar">
-
-			<ul id="menu">
-				<li><a href="index.php">Home</a></li>
-				<li><a href="all_products.php">All Products</a></li>
-				<li><a href="customer/my_account.php">My Account</a></li>
-				<li><a href="#">Sign Up</a></li>
-				<li><a href="cart.php">Shopping Cart</a></li>
-				<li><a href="#">Contact Us</a></li>
-
-			</ul>
+		<?php require('includes/menu.php') ?>
 
 			<div id="form">
 				<form method="get" action="results.php" enctype="multipart/form-data">
@@ -133,20 +123,7 @@ include("functions/functions.php");
 			</div>
 		</div>
 		<!--Content wrapper ends-->
-
-
-
-		<div id="footer">
-
-		<h2 style="text-align:center; padding-top:30px;">&copy; 2017 dummy shop</h2>
-
-		</div>
-
-
-
-
-
-
+		<?php require('includes/footer.php'); ?>
 	</div>
 <!--Main Container ends here-->
 
