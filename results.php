@@ -115,7 +115,7 @@ include("functions/functions.php");
 
 					<p><b> $ $pro_price </b></p>
 
-					<a href='details.php?pro_id=$pro_id' style='float:left;'>Details</a>
+					<a id='singleprod' href='details.php?pro_id=$pro_id'>Details</a>
 
 					<a href='index.php?pro_id=$pro_id'><button style='float:right'>Add to Cart</button></a>
 
@@ -145,7 +145,7 @@ include("functions/functions.php");
 
 
 
-	
+
 
 	</div>
 <!--Main Container ends here-->

@@ -115,7 +115,7 @@ include("functions/functions.php");
 
 					<p>$pro_desc </p>
 
-					<a href='index.php' style='float:left;'>Go Back</a>
+					<a href='index.php' id='singleprod'>Go Back</a>
 
 					<a href='index.php?pro_id=$pro_id'><button style='float:right'>Add to Cart</button></a>
 
@@ -135,7 +135,7 @@ include("functions/functions.php");
 		<!--Content wrapper ends-->
 
 
-		
+
 		<div id="footer">
 
 		<h2 style="text-align:center; padding-top:30px;">&copy; 2017 dummy shop</h2>
