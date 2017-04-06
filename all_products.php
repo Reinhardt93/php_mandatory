@@ -13,35 +13,46 @@ include("functions/functions.php");
 	</head>
 
 <body>
-
+<?php require('includes/menu.php') ?>
 	<!--Main Container starts here-->
 	<div class="main_wrapper">
 
 		<!--Header starts here-->
 		<div class="header_wrapper">
+			<div class="header_column">
+				<a href="index.php"><img id="logo" src="images/logo.png" /> </a>
+				<img id="banner" src="images/ad_banner.gif" />
+			</div>
 
-			<a href="index.php"><img id="logo" src="images/logo.gif" /> </a>
-			<img id="banner" src="images/ad_banner.gif" />
-		</div>
 		<!--Header ends here-->
 
 		<!--Navigation Bar starts-->
-		<?php require('includes/menu.php') ?>
-
+		<div class="header_column">
 			<div id="form">
 				<form method="get" action="results.php" enctype="multipart/form-data">
-					<input type="text" name="user_query" placeholder="Search a Product"/ >
-					<input type="submit" name="search" value="Search" />
+					<input id="submittext" type="text" name="user_query" placeholder="Search a Product"/ >
+					<input id="submitsubmit" type="submit" name="search" value="Search" />
 				</form>
-
 			</div>
+		</div>
+		<div class="header_column">
+			<div id="shopping_cart">
 
+					<span style="float:right; font-size:18px; padding:5px; line-height:40px;">
+
+					Welcome Guest! <b style="color:yellow">Shopping Cart -</b> Total Items: Total Price: <a href="cart.php" style="color:yellow">Go to Cart</a>
+
+
+
+					</span>
+			</div>
+		</div>
+</div>
 		</div>
 		<!--Navigation Bar ends-->
 
 		<!--Content wrapper starts-->
-		<div class="content_wrapper">
-
+<div class="top-menu" style="height:115px;">
 			<div id="sidebar">
 
 				<div id="sidebar_title">Categories</div>
@@ -62,19 +73,9 @@ include("functions/functions.php");
 
 
 			</div>
-
+</div>
+<div class="content_wrapper">
 			<div id="content_area">
-
-			<div id="shopping_cart">
-
-					<span style="float:right; font-size:18px; padding:5px; line-height:40px;">
-
-					Welcome Guest! <b style="color:yellow">Shopping Cart -</b> Total Items: Total Price: <a href="cart.php" style="color:yellow">Go to Cart</a>
-
-
-
-					</span>
-			</div>
 
 				<div id="products_box">
 	<?php

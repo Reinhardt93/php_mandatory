@@ -15,63 +15,32 @@ include("includes/db.php");
 	</head>
 
 <body>
+	<?php require('includes/menu.php') ?>
+		<!--Main Container starts here-->
+		<div class="main_wrapper">
 
-	<!--Main Container starts here-->
-	<div class="main_wrapper">
+			<!--Header starts here-->
+			<div class="header_wrapper">
+				<div class="header_column">
+					<a href="index.php"><img id="logo" src="images/logo.png" /> </a>
+					<img id="banner" src="images/ad_banner.gif" />
+				</div>
 
-		<!--Header starts here-->
-		<div class="header_wrapper">
+			<!--Header ends here-->
 
-			<a href="index.php"><img id="logo" src="images/logo.gif" /> </a>
-			<img id="banner" src="images/ad_banner.gif" />
-		</div>
-		<!--Header ends here-->
-
-		<!--Navigation Bar starts-->
-		<?php require('includes/menu.php') ?>
-
-			<div id="form">
-				<form method="get" action="results.php" enctype="multipart/form-data">
-					<input type="text" name="user_query" placeholder="Search a Product"/ >
-					<input type="submit" name="search" value="Search" />
-				</form>
-
+			<!--Navigation Bar starts-->
+			<div class="header_column">
+				<div id="form">
+					<form method="get" action="results.php" enctype="multipart/form-data">
+						<input id="submittext" type="text" name="user_query" placeholder="Search a Product"/ >
+						<input id="submitsubmit" type="submit" name="search" value="Search" />
+					</form>
+				</div>
 			</div>
+			<div class="header_column">
+				<div id="shopping_cart">
 
-		</div>
-		<!--Navigation Bar ends-->
-
-		<!--Content wrapper starts-->
-		<div class="content_wrapper">
-
-			<div id="sidebar">
-
-				<div id="sidebar_title">Categories</div>
-
-				<ul id="cats">
-
-				<?php getCats(); ?>
-
-				<ul>
-
-				<div id="sidebar_title">Brands</div>
-
-				<ul id="cats">
-
-					<?php getBrands(); ?>
-
-				<ul>
-
-
-			</div>
-
-			<div id="content_area">
-
-			<?php cart(); ?>
-
-			<div id="shopping_cart">
-
-					<span style="float:right; font-size:17px; padding:5px; line-height:40px;">
+					<span style="float:right; font-size:14px; padding:5px; line-height:40px;">
 
 					<?php
 					if(isset($_SESSION['customer_email'])){
@@ -82,7 +51,7 @@ include("includes/db.php");
 					}
 					?>
 
-					<b style="color:yellow">Shopping Cart -</b> Total Items: <?php total_items();?> Total Price: <?php total_price(); ?> <a href="index.php" style="color:yellow">Back to Shop</a>
+					<p>Shopping Cart - Total Items: <?php total_items();?> Total Price: <?php total_price(); ?></p> <a href="cart.php">Go to Cart</a>
 
 					<?php
 					if(!isset($_SESSION['customer_email'])){
@@ -93,15 +62,48 @@ include("includes/db.php");
 					else {
 					echo "<a href='logout.php' style='color:orange;'>Logout</a>";
 					}
-
-
-
 					?>
-
 					</span>
+				</div>
+			</div>
+	</div>
+			</div>
+			<!--Navigation Bar ends-->
+
+			<!--Content wrapper starts-->
+	<div class="top-menu" style="height:115px;">
+				<div id="sidebar">
+
+					<div id="sidebar_title">Categories</div>
+
+					<ul id="cats">
+
+					<?php getCats(); ?>
+
+					<ul>
+
+					<div id="sidebar_title">Brands</div>
+
+					<ul id="cats">
+
+						<?php getBrands(); ?>
+
+					<ul>
+
+
+				</div>
+	</div>
+	<div class="content_wrapper">
+			<div id="content_area">
+
+			<?php cart(); ?>
+
+			<div id="shopping_cart">
+
+
 			</div>
 
-				<div id="products_box">
+				<div id="products_box" style="width:700px;margin-left:auto;margin-right:auto;">
 
 			<form action="" method="post" enctype="multipart/form-data">
 

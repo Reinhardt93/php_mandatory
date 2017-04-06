@@ -25,7 +25,7 @@ include("functions/functions.php");
 		<!--Header starts here-->
 		<div class="header_wrapper">
 			<div class="header_column">
-				<a href="index.php"><img id="logo" src="images/logo.gif" /> </a>
+				<a href="index.php"><img id="logo" src="images/logo.png" /> </a>
 				<img id="banner" src="images/ad_banner.gif" />
 			</div>
 			<div class="header_column">
@@ -39,7 +39,7 @@ include("functions/functions.php");
 			<div class="header_column">
 				<div id="shopping_cart">
 
-						<span style="float:right; font-size:17px; padding:5px; line-height:40px;">
+						<span style="float:right; font-size:14px; padding:5px; line-height:40px;">
 
 						<?php
 						if(isset($_SESSION['customer_email'])){
@@ -68,26 +68,29 @@ include("functions/functions.php");
 		</div>
 		<!--Header ends here-->
 	</div>
+	<div class="top-menu">
+
+		<div id="sidebar">
+
+			<div id="sidebar_title">Categories</div>
+
+			<ul id="cats">
+
+			<?php getCats(); ?>
+
+			<ul>
+<!--
+			<div id="sidebar_title" class="brands">Brands</div>
+
+			<ul id="cats">
+				<?php getBrands(); ?>
+			<ul>-->
+		</div></div>
 <!--Main Container ends here-->
 		<!--Content wrapper starts-->
 		<div class="content_wrapper">
 
-			<div id="sidebar">
 
-				<div id="sidebar_title">Categories</div>
-
-				<ul id="cats">
-
-				<?php getCats(); ?>
-
-				<ul>
-
-				<div id="sidebar_title" class="brands">Brands</div>
-
-				<ul id="cats">
-					<?php getBrands(); ?>
-				<ul>
-			</div>
 
 			<div id="content_area">
 
