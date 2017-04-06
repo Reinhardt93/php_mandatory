@@ -29,3 +29,4 @@ header ("Location: index.php");
 
 //Todo: sanitize the POST data - Change Code to use Prepared Statements (PDO)
 ?>
+

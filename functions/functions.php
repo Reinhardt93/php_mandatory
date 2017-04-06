@@ -27,7 +27,7 @@ function cart(){
 if(isset($_GET['add_cart'])){
 
 	global $con;
-  
+
 	$ip = getIp();
 
 	$pro_id = $_GET['add_cart'];
@@ -132,165 +132,101 @@ if(isset($_GET['add_cart'])){
 
 function getCats(){
 
-	global $con;
+  global $pdo;
 
-	$get_cats = "select * from categories";
+  $stmt = $pdo->query('SELECT * FROM categories');
+  while($row_cats = $stmt->fetch())
+  {
+    $cat_id = $row_cats['cat_id'];
+    $cat_title = $row_cats['cat_title'];
 
-	$run_cats = mysqli_query($con, $get_cats);
-
-	while ($row_cats=mysqli_fetch_array($run_cats)){
-
-		$cat_id = $row_cats['cat_id'];
-		$cat_title = $row_cats['cat_title'];
-
-	echo "<li><a href='index.php?cat=$cat_id'>$cat_title</a></li>";
-
-
-	}
-
-
+    echo "<li><a href='index.php?cat=$cat_id'>$cat_title</a></li>";
+  }
 }
+
+
 
 //getting the brands
 
 function getBrands(){
 
-	global $con;
+  global $pdo;
 
-	$get_brands = "select * from brands";
+  $stmt = $pdo->query('SELECT * FROM brands');
+  while($row_brand = $stmt->fetch())
+  {
+    $brand_id = $row_brand['brand_id'];
+    $brand_title = $row_brand['brand_title'];
 
-	$run_brands = mysqli_query($con, $get_brands);
+    echo "<li><a href='index.php?cat=$brand_id'>$brand_title</a></li>";
+  }
 
-	while ($row_brands=mysqli_fetch_array($run_brands)){
-
-		$brand_id = $row_brands['brand_id'];
-		$brand_title = $row_brands['brand_title'];
-
-	echo "<li><a href='index.php?brand=$brand_id'>$brand_title</a></li>";
-
-
-	}
 }
 
 function getPro(){
 
-	if(!isset($_GET['cat'])){
-		if(!isset($_GET['brand'])){
+  global $pdo;
 
-	global $con;
+  $stmt = $pdo->query('SELECT * FROM products ORDER BY RAND() LIMIT 0,6');
+  while($row_pro = $stmt->fetch())
+  {
+      $pro_id = $row_pro['product_id'];
+      $pro_cat = $row_pro['product_cat'];
+      $pro_brand = $row_pro['product_brand'];
+      $pro_title = $row_pro['product_title'];
+      $pro_price = $row_pro['product_price'];
+      $pro_image = $row_pro['product_image'];
 
-	$get_pro = "select * from products order by RAND() LIMIT 0,6";
-
-	$run_pro = mysqli_query($con, $get_pro);
-
-	while($row_pro=mysqli_fetch_array($run_pro)){
-
-		$pro_id = $row_pro['product_id'];
-		$pro_cat = $row_pro['product_cat'];
-		$pro_brand = $row_pro['product_brand'];
-		$pro_title = $row_pro['product_title'];
-		$pro_price = $row_pro['product_price'];
-		$pro_image = $row_pro['product_image'];
-
-		echo "
-				<div id='single_product'>
-
-					<h3>$pro_title</h3>
-
-					<img src='admin_area/product_images/$pro_image' width='180' height='180' />
-
-					<p><b> Price: $ $pro_price </b></p>
-
-					<a href='details.php?pro_id=$pro_id' id='singleprod'>Details</a>
-
-					<a href='index.php?add_cart=$pro_id'><button style='float:right'>Add to Cart</button></a>
-
-				</div>
-
-
-		";
-
-	}
-	}
+      echo "
+        <div id='single_product'>
+          <h3>$pro_title</h3>
+          <img src='admin_area/product_images/$pro_image' width='180' height='180' />
+             <p><b> Price: $ $pro_price </b></p>
+             <a href='details.php?pro_id=$pro_id' id='singleprod'>Details</a>
+             <a href='index.php?add_cart=$pro_id'><button style='float:right'>Add to Cart</button></a>
+           </div>
+       ";
+  }
 }
 
-}
 
 function getCatPro(){
 
-	if(isset($_GET['cat'])){
+  global $pdo;
 
-		$cat_id = $_GET['cat'];
+  $stmt = $pdo->prepare('SELECT * FROM products WHERE product_cat = ?');
+  $stmt->execute(['cat']);
+  while($row_cat_pro = $stmt->fetch())
+  {
+      $pro_id = $row_pro['product_id'];
+      $pro_cat = $row_pro['product_cat'];
+      $pro_brand = $row_pro['product_brand'];
+      $pro_title = $row_pro['product_title'];
+      $pro_price = $row_pro['product_price'];
+      $pro_image = $row_pro['product_image'];
 
-	global $con;
-
-	$get_cat_pro = "select * from products where product_cat='$cat_id'";
-
-	$run_cat_pro = mysqli_query($con, $get_cat_pro);
-
-	$count_cats = mysqli_num_rows($run_cat_pro);
-
-	if($count_cats==0){
-
-	echo "<h2 style='padding:20px;'>No products where found in this category!</h2>";
-
-	}
-
-	while($row_cat_pro=mysqli_fetch_array($run_cat_pro)){
-
-		$pro_id = $row_cat_pro['product_id'];
-		$pro_cat = $row_cat_pro['product_cat'];
-		$pro_brand = $row_cat_pro['product_brand'];
-		$pro_title = $row_cat_pro['product_title'];
-		$pro_price = $row_cat_pro['product_price'];
-		$pro_image = $row_cat_pro['product_image'];
-
-		echo "
-				<div id='single_product'>
-
-					<h3>$pro_title</h3>
-
-					<img src='admin_area/product_images/$pro_image' width='180' height='180' />
-
-					<p><b> $ $pro_price </b></p>
-
-					<a href='details.php?pro_id=$pro_id' style='float:left;'>Details</a>
-
-					<a href='index.php?pro_id=$pro_id'><button style='float:right'>Add to Cart</button></a>
-
-				</div>
-
-		";
-
-
-	}
-
-}
+      echo "
+        <div id='single_product'>
+          <h3>$pro_title</h3>
+          <img src='admin_area/product_images/$pro_image' width='180' height='180' />
+          <p><b> $ $pro_price </b></p>
+          <a href='details.php?pro_id=$pro_id' style='float:left;'>Details</a>
+          <a href='index.php?pro_id=$pro_id'><button style='float:right'>Add to Cart</button></a>
+        </div>
+        ";
+  }
 
 }
 
 
 function getBrandPro(){
 
-	if(isset($_GET['brand'])){
+  global $pdo;
 
-		$brand_id = $_GET['brand'];
-
-	global $con;
-
-	$get_brand_pro = "select * from products where product_brand='$brand_id'";
-
-	$run_brand_pro = mysqli_query($con, $get_brand_pro);
-
-	$count_brands = mysqli_num_rows($run_brand_pro);
-
-	if($count_brands==0){
-
-	echo "<h2 style='padding:20px;'>No products where found associated with this brand!!</h2>";
-
-	}
-
-	while($row_brand_pro=mysqli_fetch_array($run_brand_pro)){
+  $stmt = $pdo->prepare('SELECT * FROM products WHERE product_brand = ?');
+  $stmt->execute(['brand']);
+  while($row_brand_pro = $stmt->fetch())
+  {
 
 		$pro_id = $row_brand_pro['product_id'];
 		$pro_cat = $row_brand_pro['product_cat'];
@@ -301,25 +237,15 @@ function getBrandPro(){
 
 		echo "
 				<div id='single_product'>
-
 					<h3>$pro_title</h3>
-
 					<img src='admin_area/product_images/$pro_image' width='180' height='180' />
-
 					<p><b> $ $pro_price </b></p>
-
 					<a href='details.php?pro_id=$pro_id' style='float:left;'>Details</a>
-
 					<a href='index.php?pro_id=$pro_id'><button style='float:right'>Add to Cart</button></a>
-
 				</div>
-
 		";
-
-
 	}
 
-}
 }
 
 
