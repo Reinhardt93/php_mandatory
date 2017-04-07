@@ -16,7 +16,7 @@
 	<?php 
 	include("includes/db.php");
 	
-	$get_order = "select * from orders";
+	$get_order = "SELECT * from orders";
 	
 	$run_order = mysqli_query($con, $get_order); 
 	
@@ -32,7 +32,7 @@
 		$status = $row_order['status'];
 		$i++;
 		
-		$get_pro = "select * from products where product_id='$pro_id'";
+		$get_pro = "SELECT * from products where product_id='$pro_id'";
 		$run_pro = mysqli_query($con, $get_pro); 
 		
 		$row_pro=mysqli_fetch_array($run_pro); 

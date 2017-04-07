@@ -22,7 +22,6 @@ include("functions/functions.php");
 			<div class="header_wrapper">
 				<div class="header_column">
 					<a href="index.php"><img id="logo" src="images/logo.png" /> </a>
-					<img id="banner" src="images/ad_banner.gif" />
 				</div>
 
 			<!--Header ends here-->
@@ -96,7 +95,7 @@ include("functions/functions.php");
 
 			<?php cart(); ?>
 
-	
+
 
 				<div id="products_box">
 

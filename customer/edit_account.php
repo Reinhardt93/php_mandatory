@@ -4,7 +4,7 @@
 
 				$user = $_SESSION['customer_email'];
 
-				$get_customer = "select * from customers where customer_email='$user'";
+				$get_customer = "SELECT * from customers where customer_email='$user'";
 
 				$run_customer = mysqli_query($con, $get_customer);
 
@@ -56,11 +56,11 @@
 						<tr>
 							<td align="right">Customer Country:</td>
 							<td>
-							<select name="c_country">
+							<SELECT name="c_country">
 								<option><?php echo $country; ?></option>
 								<option>Denmark</option>
 								<option>Not Denmark</option>
-							</select>
+							</SELECT>
 
 							</td>
 						</tr>

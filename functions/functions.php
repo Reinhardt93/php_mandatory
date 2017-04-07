@@ -142,6 +142,7 @@ function getCats(){
 
     echo "<li><a href='index.php?cat=$cat_id'>$cat_title</a></li>";
   }
+
 }
 
 
@@ -194,16 +195,20 @@ function getCatPro(){
 
   global $pdo;
 
+  if(isset($_GET['cat'])){
+
+    $cat_id = $_GET['cat'];
+
   $stmt = $pdo->prepare('SELECT * FROM products WHERE product_cat = ?');
-  $stmt->execute(['cat']);
+  $stmt->execute([$cat_id]);
   while($row_cat_pro = $stmt->fetch())
   {
-      $pro_id = $row_pro['product_id'];
-      $pro_cat = $row_pro['product_cat'];
-      $pro_brand = $row_pro['product_brand'];
-      $pro_title = $row_pro['product_title'];
-      $pro_price = $row_pro['product_price'];
-      $pro_image = $row_pro['product_image'];
+      $pro_id = $row_cat_pro['product_id'];
+      $pro_cat = $row_cat_pro['product_cat'];
+      $pro_brand = $row_cat_pro['product_brand'];
+      $pro_title = $row_cat_pro['product_title'];
+      $pro_price = $row_cat_pro['product_price'];
+      $pro_image = $row_cat_pro['product_image'];
 
       echo "
         <div id='single_product'>
@@ -216,6 +221,7 @@ function getCatPro(){
         ";
   }
 
+  }
 }
 
 

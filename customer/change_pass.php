@@ -38,7 +38,7 @@ include("includes/db.php");
 		$new_pass = $_POST['new_pass']; 
 		$new_again = $_POST['new_pass_again']; 
 		
-		$sel_pass = "select * from customers where customer_pass='$current_pass' AND customer_email='$user'";
+		$sel_pass = "SELECT * from customers where customer_pass='$current_pass' AND customer_email='$user'";
 		
 		$run_pass = mysqli_query($con, $sel_pass); 
 		

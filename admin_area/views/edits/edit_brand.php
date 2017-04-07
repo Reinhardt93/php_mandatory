@@ -5,7 +5,7 @@ if(isset($_GET['edit_brand'])){
 
 	$brand_id = $_GET['edit_brand']; 
 	
-	$get_brand = "select * from brands where brand_id='$brand_id'";
+	$get_brand = "SELECT * from brands where brand_id='$brand_id'";
 
 	$run_brand = mysqli_query($con, $get_brand); 
 	

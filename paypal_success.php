@@ -20,7 +20,7 @@ session_start();
 
 		$ip = getIp();
 
-		$sel_price = "select * from cart where ip_add='$ip'";
+		$sel_price = "SELECT * from cart where ip_add='$ip'";
 
 		$run_price = mysqli_query($con, $sel_price);
 
@@ -28,7 +28,7 @@ session_start();
 
 			$pro_id = $p_price['p_id'];
 
-			$pro_price = "select * from products where product_id='$pro_id'";
+			$pro_price = "SELECT * from products where product_id='$pro_id'";
 
 			$run_pro_price = mysqli_query($con,$pro_price);
 
@@ -51,7 +51,7 @@ session_start();
 		}
 
 			// getting Quantity of the product
-			$get_qty = "select * from cart where p_id='$pro_id'";
+			$get_qty = "SELECT * from cart where p_id='$pro_id'";
 
 			$run_qty = mysqli_query($con, $get_qty);
 
@@ -74,7 +74,7 @@ session_start();
 			// this is about the customer
 			$user = $_SESSION['customer_email'];
 
-			$get_c = "select * from customers where customer_email='$user'";
+			$get_c = "SELECT * from customers where customer_email='$user'";
 
 			$run_c = mysqli_query($con, $get_c);
 

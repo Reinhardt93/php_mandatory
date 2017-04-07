@@ -96,7 +96,7 @@ include("functions/functions.php");
 
 	$product_id = $_GET['pro_id'];
 
-	$get_pro = "select * from products where product_id='$product_id'";
+	$get_pro = "SELECT * from products where product_id='$product_id'";
 
 	$run_pro = mysqli_query($con, $get_pro);
 
