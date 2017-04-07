@@ -47,56 +47,56 @@ else {
 		<?php
 		if(isset($_GET['insert_product'])){
 
-		include("insert_product.php");
+		include("views/inserts/insert_product.php");
 
 		}
 		if(isset($_GET['view_products'])){
 
-		include("view_products.php");
+		include("views/view_products.php");
 
 		}
 		if(isset($_GET['edit_pro'])){
 
-		include("edit_pro.php");
+		include("views/edits/edit_pro.php");
 
 		}
 		if(isset($_GET['insert_cat'])){
 
-		include("insert_cat.php");
+		include("views/inserts/insert_cat.php");
 
 		}
 
 		if(isset($_GET['view_cats'])){
 
-		include("view_cats.php");
+		include("views/view_cats.php");
 
 		}
 
 		if(isset($_GET['edit_cat'])){
 
-		include("edit_cat.php");
+		include("views/edits/edit_cat.php");
 
 		}
 
 		if(isset($_GET['insert_brand'])){
 
-		include("insert_brand.php");
+		include("views/inserts/insert_brand.php");
 
 		}
 
 		if(isset($_GET['view_brands'])){
 
-		include("view_brands.php");
+		include("views/view_brands.php");
 
 		}
 		if(isset($_GET['edit_brand'])){
 
-		include("edit_brand.php");
+		include("views/edits/edit_brand.php");
 
 		}
 		if(isset($_GET['view_customers'])){
 
-		include("view_customers.php");
+		include("views/view_customers.php");
 
 		}
 

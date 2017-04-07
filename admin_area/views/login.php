@@ -24,14 +24,14 @@ session_start();
 
 <?php
 
-include("includes/db.php");
+include("..includes/db.php");
 
 	if(isset($_POST['login'])){
 
 		$email = ($_POST['email']);
 		$pass = ($_POST['password']);
 
-	$sel_user = "select * from admins where user_email='$email' AND user_pass='$pass'";
+	$sel_user = "SELECT * FROM admins WHERE user_email='$email' AND user_pass='$pass'";
 
 	$run_user = mysqli_query($con, $sel_user);
 
