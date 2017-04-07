@@ -8,11 +8,9 @@ include("functions/functions.php");
 <html>
 	<head>
 		<title>My Online Shop</title>
-
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
-	<link rel="stylesheet" href="styles/style.css" media="all" />
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="styles/style.css" media="all" />
 	</head>
-
 <body>
 
 	<!--Navigation Bar starts-->
@@ -50,9 +48,8 @@ include("functions/functions.php");
 						}
 						?>
 
-						<p>Shopping Cart - Total Items: <?php total_items();?> Total Price: <?php total_price(); ?></p> <a href="cart.php">Go to Cart</a>
+						<?php echo '<p>Shopping Cart - Total Items:';  total_items(); echo 'Total Price:'; total_price(); echo '</p> <a href="cart.php">Go to Cart</a>';
 
-						<?php
 						if(!isset($_SESSION['customer_email'])){
 
 						echo "<a href='checkout.php' style='color:orange;'>Login</a>";
@@ -69,15 +66,10 @@ include("functions/functions.php");
 		<!--Header ends here-->
 	</div>
 	<div class="top-menu">
-
 		<div id="sidebar">
-
 			<div id="sidebar_title">Categories</div>
-
 			<ul id="cats">
-
 			<?php getCats(); ?>
-
 			<ul>
 <!--
 			<div id="sidebar_title" class="brands">Brands</div>
