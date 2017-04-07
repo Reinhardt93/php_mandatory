@@ -114,18 +114,6 @@ include("includes/db.php");
 							</tr>
 
 
-
-							<tr>
-
-								<td style="float:left;">
-								<select name="c_country">
-									<option>Select a Country</option>
-									<option>Denmark</option>
-									<option>Not Denmark</option>
-								</select>
-
-								</td>
-							</tr>
 							<td><input placeholder="Customer Name" id="input" type="text" name="c_name" required/></td>
 						</tr>
 
@@ -138,16 +126,6 @@ include("includes/db.php");
 
 
 							<td><input id="input" placeholder="Customer Password" type="password" name="c_pass" required/></td>
-
-							<td align="right">Customer Country:</td>
-							<td>
-							<SELECT name="c_country">
-								<option>SELECT a Country</option>
-								<option>Denmark</option>
-								<option>Not Denmark</option>
-							</SELECT>
-
-							</td>
 
 						</tr>
 
@@ -166,7 +144,14 @@ include("includes/db.php");
 							<td><input placeholder="Customer Address" id="input" type="text" name="c_address" required/></td>
 						</tr>
 
+						<td>
+						<SELECT name="c_country">
+							<option>SELECT a Country</option>
+							<option>Denmark</option>
+							<option>Not Denmark</option>
+						</SELECT>
 
+					</td>
 					<tr align="center">
 						<td colspan="6"><input style="background-color:#336699;width:118px;height:50px;color:white;border-radius:5px;float:left;" type="submit" name="register" value="Create Account" /></td>
 					</tr>
