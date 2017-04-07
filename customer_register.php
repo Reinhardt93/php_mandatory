@@ -99,66 +99,64 @@ include("includes/db.php");
 
 
 
-				<form action="customer_register.php" method="post" enctype="multipart/form-data" style="margin-left:172px;margin-top:100px;">
+				<form action="customer_register.php" method="post" enctype="multipart/form-data" style="margin-top:100px;">
 
-					<table align="center" width="750">
+					<table align="center" width="103" style="margin-left:auto;margin-right:auto;">
 
 						<tr align="center">
 							<td colspan="6"><h2>Create an Account</h2></td>
 						</tr>
 
 						<tr>
-							<td align="right">Customer Name:</td>
-							<td><input type="text" name="c_name" required/></td>
+							<tr>
+
+								<td><input placeholder="Customer Image" id="input" type="file" name="c_image" required/></td>
+							</tr>
+
+
+
+							<tr>
+
+								<td style="float:left;">
+								<select name="c_country">
+									<option>Select a Country</option>
+									<option>Denmark</option>
+									<option>Not Denmark</option>
+								</select>
+
+								</td>
+							</tr>
+							<td><input placeholder="Customer Name" id="input" type="text" name="c_name" required/></td>
 						</tr>
 
 						<tr>
-							<td align="right">Customer Email:</td>
-							<td><input type="text" name="c_email" required/></td>
+
+							<td><input id="input" placeholder="Customer Email" type="text" name="c_email" required/></td>
 						</tr>
 
 						<tr>
-							<td align="right">Customer Password:</td>
-							<td><input type="password" name="c_pass" required/></td>
+
+							<td><input id="input" placeholder="Customer Password" type="password" name="c_pass" required/></td>
 						</tr>
 
 						<tr>
-							<td align="right">Customer Image:</td>
-							<td><input type="file" name="c_image" required/></td>
-						</tr>
 
-
-
-						<tr>
-							<td align="right">Customer Country:</td>
-							<td>
-							<select name="c_country">
-								<option>Select a Country</option>
-								<option>Denmark</option>
-								<option>Not Denmark</option>
-							</select>
-
-							</td>
+							<td><input placeholder="Customer City" id="input" type="text" name="c_city" required/></td>
 						</tr>
 
 						<tr>
-							<td align="right">Customer City:</td>
-							<td><input type="text" name="c_city" required/></td>
+
+							<td><input id="input" placeholder="Customer Contact" type="text" name="c_contact" required/></td>
 						</tr>
 
 						<tr>
-							<td align="right">Customer Contact:</td>
-							<td><input type="text" name="c_contact" required/></td>
-						</tr>
 
-						<tr>
-							<td align="right">Customer Address</td>
-							<td><input type="text" name="c_address" required/></td>
+							<td><input placeholder="Customer Address" id="input" type="text" name="c_address" required/></td>
 						</tr>
 
 
 					<tr align="center">
-						<td colspan="6"><input type="submit" name="register" value="Create Account" /></td>
+						<td colspan="6"><input style="background-color:#336699;width:118px;height:50px;color:white;border-radius:5px;float:left;" type="submit" name="register" value="Create Account" /></td>
 					</tr>
 
 
