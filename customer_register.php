@@ -136,7 +136,19 @@ include("includes/db.php");
 
 						<tr>
 
+
 							<td><input id="input" placeholder="Customer Password" type="password" name="c_pass" required/></td>
+
+							<td align="right">Customer Country:</td>
+							<td>
+							<SELECT name="c_country">
+								<option>SELECT a Country</option>
+								<option>Denmark</option>
+								<option>Not Denmark</option>
+							</SELECT>
+
+							</td>
+
 						</tr>
 
 						<tr>
@@ -198,7 +210,7 @@ include("includes/db.php");
 
 		$run_c = mysqli_query($con, $insert_c);
 
-		$sel_cart = "select * from cart where ip_add='$ip'";
+		$sel_cart = "SELECT * from cart where ip_add='$ip'";
 
 		$run_cart = mysqli_query($con, $sel_cart);
 

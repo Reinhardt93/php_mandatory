@@ -8,7 +8,7 @@ if(isset($_GET['edit_pro'])){
 
 	$get_id = $_GET['edit_pro']; 
 	
-	$get_pro = "select * from products where product_id='$get_id'";
+	$get_pro = "SELECT * from products where product_id='$get_id'";
 	
 	$run_pro = mysqli_query($con, $get_pro); 
 	
@@ -25,7 +25,7 @@ if(isset($_GET['edit_pro'])){
 		$pro_cat = $row_pro['product_cat'];
 		$pro_brand = $row_pro['product_brand'];
 		
-		$get_cat = "select * from categories where cat_id='$pro_cat'";
+		$get_cat = "SELECT * from categories where cat_id='$pro_cat'";
 		
 		$run_cat=mysqli_query($con, $get_cat); 
 		
@@ -33,7 +33,7 @@ if(isset($_GET['edit_pro'])){
 		
 		$category_title = $row_cat['cat_title'];
 		
-		$get_brand = "select * from brands where brand_id='$pro_brand'";
+		$get_brand = "SELECT * from brands where brand_id='$pro_brand'";
 		
 		$run_brand=mysqli_query($con, $get_brand); 
 		
@@ -48,7 +48,7 @@ if(isset($_GET['edit_pro'])){
 		
 <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
 <script>
-        tinymce.init({selector:'textarea'});
+        tinymce.init({SELECTor:'textarea'});
 </script>
 	</head>
 	
@@ -71,10 +71,10 @@ if(isset($_GET['edit_pro'])){
 			<tr>
 				<td align="right"><b>Product Category:</b></td>
 				<td>
-				<select name="product_cat" >
+				<SELECT name="product_cat" >
 					<option><?php echo $category_title; ?></option>
 					<?php 
-		$get_cats = "select * from categories";
+		$get_cats = "SELECT * from categories";
 	
 		$run_cats = mysqli_query($con, $get_cats);
 	
@@ -89,7 +89,7 @@ if(isset($_GET['edit_pro'])){
 	}
 					
 					?>
-				</select>
+				</SELECT>
 				
 				
 				</td>
@@ -98,10 +98,10 @@ if(isset($_GET['edit_pro'])){
 			<tr>
 				<td align="right"><b>Product Brand:</b></td>
 				<td>
-				<select name="product_brand" >
+				<SELECT name="product_brand" >
 					<option><?php echo $brand_title; ?></option>
 					<?php 
-		$get_brands = "select * from brands";
+		$get_brands = "SELECT * from brands";
 	
 	$run_brands = mysqli_query($con, $get_brands);
 	
@@ -116,7 +116,7 @@ if(isset($_GET['edit_pro'])){
 	}
 					
 					?>
-				</select>
+				</SELECT>
 				
 				
 				</td>

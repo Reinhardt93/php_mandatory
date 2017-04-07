@@ -32,7 +32,7 @@ if(isset($_GET['add_cart'])){
 
 	$pro_id = $_GET['add_cart'];
 
-	$check_pro = "select * from cart where ip_add='$ip' AND p_id='$pro_id'";
+	$check_pro = "SELECT * from cart where ip_add='$ip' AND p_id='$pro_id'";
 
 	$run_check = mysqli_query($con, $check_pro);
 
@@ -63,7 +63,7 @@ if(isset($_GET['add_cart'])){
 
 		$ip = getIp();
 
-		$get_items = "select * from cart where ip_add='$ip'";
+		$get_items = "SELECT * from cart where ip_add='$ip'";
 
 		$run_items = mysqli_query($con, $get_items);
 
@@ -77,7 +77,7 @@ if(isset($_GET['add_cart'])){
 
 		$ip = getIp();
 
-		$get_items = "select * from cart where ip_add='$ip'";
+		$get_items = "SELECT * from cart where ip_add='$ip'";
 
 		$run_items = mysqli_query($con, $get_items);
 
@@ -98,7 +98,7 @@ if(isset($_GET['add_cart'])){
 
 		$ip = getIp();
 
-		$sel_price = "select * from cart where ip_add='$ip'";
+		$sel_price = "SELECT * from cart where ip_add='$ip'";
 
 		$run_price = mysqli_query($con, $sel_price);
 
@@ -106,7 +106,7 @@ if(isset($_GET['add_cart'])){
 
 			$pro_id = $p_price['p_id'];
 
-			$pro_price = "select * from products where product_id='$pro_id'";
+			$pro_price = "SELECT * from products where product_id='$pro_id'";
 
 			$run_pro_price = mysqli_query($con,$pro_price);
 
@@ -134,7 +134,7 @@ function getCats(){
 
 	global $con;
 
-	$get_cats = "select * from categories";
+	$get_cats = "SELECT * from categories";
 
 	$run_cats = mysqli_query($con, $get_cats);
 
@@ -157,7 +157,7 @@ function getBrands(){
 
 	global $con;
 
-	$get_brands = "select * from brands";
+	$get_brands = "SELECT * from brands";
 
 	$run_brands = mysqli_query($con, $get_brands);
 
@@ -179,7 +179,7 @@ function getPro(){
 
 	global $con;
 
-	$get_pro = "select * from products order by RAND() LIMIT 0,6";
+	$get_pro = "SELECT * from products order by RAND() LIMIT 0,6";
 
 	$run_pro = mysqli_query($con, $get_pro);
 
@@ -224,7 +224,7 @@ function getCatPro(){
 
 	global $con;
 
-	$get_cat_pro = "select * from products where product_cat='$cat_id'";
+	$get_cat_pro = "SELECT * from products where product_cat='$cat_id'";
 
 	$run_cat_pro = mysqli_query($con, $get_cat_pro);
 
@@ -278,7 +278,7 @@ function getBrandPro(){
 
 	global $con;
 
-	$get_brand_pro = "select * from products where product_brand='$brand_id'";
+	$get_brand_pro = "SELECT * from products where product_brand='$brand_id'";
 
 	$run_brand_pro = mysqli_query($con, $get_brand_pro);
 

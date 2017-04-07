@@ -11,7 +11,7 @@ include("includes/db.php");
 		
 <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
 <script>
-        tinymce.init({selector:'textarea'});
+        tinymce.init({SELECTor:'textarea'});
 </script>
 	</head>
 	
@@ -34,10 +34,10 @@ include("includes/db.php");
 			<tr>
 				<td align="right"><b>Product Category:</b></td>
 				<td>
-				<select name="product_cat" >
-					<option>Select a Category</option>
+				<SELECT name="product_cat" >
+					<option>SELECT a Category</option>
 					<?php 
-		$get_cats = "select * from categories";
+		$get_cats = "SELECT * from categories";
 	
 		$run_cats = mysqli_query($con, $get_cats);
 	
@@ -52,7 +52,7 @@ include("includes/db.php");
 	}
 					
 					?>
-				</select>
+				</SELECT>
 				
 				
 				</td>
@@ -61,10 +61,10 @@ include("includes/db.php");
 			<tr>
 				<td align="right"><b>Product Brand:</b></td>
 				<td>
-				<select name="product_brand" >
-					<option>Select a Brand</option>
+				<SELECT name="product_brand" >
+					<option>SELECT a Brand</option>
 					<?php 
-		$get_brands = "select * from brands";
+		$get_brands = "SELECT * from brands";
 	
 	$run_brands = mysqli_query($con, $get_brands);
 	
@@ -79,7 +79,7 @@ include("includes/db.php");
 	}
 					
 					?>
-				</select>
+				</SELECT>
 				
 				
 				</td>

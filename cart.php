@@ -122,7 +122,7 @@ include("includes/db.php");
 
 		$ip = getIp();
 
-		$sel_price = "select * from cart where ip_add='$ip'";
+		$sel_price = "SELECT * from cart where ip_add='$ip'";
 
 		$run_price = mysqli_query($con, $sel_price);
 
@@ -130,7 +130,7 @@ include("includes/db.php");
 
 			$pro_id = $p_price['p_id'];
 
-			$pro_price = "select * from products where product_id='$pro_id'";
+			$pro_price = "SELECT * from products where product_id='$pro_id'";
 
 			$run_pro_price = mysqli_query($con,$pro_price);
 

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../functions/functions.php");
+include("functions/functions.php");
 
 ?>
 <!DOCTYPE>
@@ -141,6 +141,7 @@ include("../functions/functions.php");
 
 
 				<?php
+				$c_name = "";
 				if(!isset($_GET['my_orders'])){
 					if(!isset($_GET['edit_account'])){
 						if(!isset($_GET['change_pass'])){

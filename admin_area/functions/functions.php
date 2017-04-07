@@ -5,7 +5,7 @@ include("../includes/db.php");
 function viewAllProducts(){
   global $con;
 
-$get_pro = "select * from products";
+$get_pro = "SELECT * from products";
 
 $run_pro = mysqli_query($con, $get_pro);
 
@@ -36,7 +36,7 @@ function viewAllPayments(){
 
   global $con;
 
-  $get_payment = "select * from payments";
+  $get_payment = "SELECT * from payments";
 
 	$run_payment = mysqli_query($con, $get_payment);
 
@@ -52,7 +52,7 @@ function viewAllPayments(){
 
 		$i++;
 
-		$get_pro = "select * from products where product_id='$pro_id'";
+		$get_pro = "SELECT * from products where product_id='$pro_id'";
 		$run_pro = mysqli_query($con, $get_pro);
 
 		$row_pro=mysqli_fetch_array($run_pro);
@@ -60,7 +60,7 @@ function viewAllPayments(){
 		$pro_image = $row_pro['product_image'];
 		$pro_title = $row_pro['product_title'];
 
-		$get_c = "select * from customers where customer_id='$c_id'";
+		$get_c = "SELECT * from customers where customer_id='$c_id'";
 		$run_c = mysqli_query($con, $get_c);
 
 		$row_c=mysqli_fetch_array($run_c);
@@ -88,7 +88,7 @@ function viewAllOrders(){
 
   global $con;
 
-  $get_order = "select * from orders";
+  $get_order = "SELECT * from orders";
 
   $run_order = mysqli_query($con, $get_order);
 
@@ -104,7 +104,7 @@ function viewAllOrders(){
     $order_date = $row_order['order_date'];
     $i++;
 
-    $get_pro = "select * from products where product_id='$pro_id'";
+    $get_pro = "SELECT * from products where product_id='$pro_id'";
     $run_pro = mysqli_query($con, $get_pro);
 
     $row_pro=mysqli_fetch_array($run_pro);
@@ -112,7 +112,7 @@ function viewAllOrders(){
     $pro_image = $row_pro['product_image'];
     $pro_title = $row_pro['product_title'];
 
-    $get_c = "select * from customers where customer_id='$c_id'";
+    $get_c = "SELECT * from customers where customer_id='$c_id'";
     $run_c = mysqli_query($con, $get_c);
 
     $row_c=mysqli_fetch_array($run_c);
@@ -140,7 +140,7 @@ function viewAllCustomers(){
 
   global $con;
 
-  $get_c = "select * from customers";
+  $get_c = "SELECT * from customers";
 
   $run_c = mysqli_query($con, $get_c);
 
@@ -171,7 +171,7 @@ function viewAllCategories(){
 
   global $con;
 
-  $get_cat = "select * from categories";
+  $get_cat = "SELECT * from categories";
 
 	$run_cat = mysqli_query($con, $get_cat);
 

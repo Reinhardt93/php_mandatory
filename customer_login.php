@@ -32,7 +32,7 @@ include("includes/db.php");
 		$c_email = $_POST['email'];
 		$c_pass = $_POST['pass'];
 		
-		$sel_c = "select * from customers where customer_pass='$c_pass' AND customer_email='$c_email'";
+		$sel_c = "SELECT * from customers where customer_pass='$c_pass' AND customer_email='$c_email'";
 		
 		$run_c = mysqli_query($con, $sel_c);
 		
@@ -45,7 +45,7 @@ include("includes/db.php");
 		}
 		$ip = getIp(); 
 		
-		$sel_cart = "select * from cart where ip_add='$ip'";
+		$sel_cart = "SELECT * from cart where ip_add='$ip'";
 		
 		$run_cart = mysqli_query($con, $sel_cart); 
 		

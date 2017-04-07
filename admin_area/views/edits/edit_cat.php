@@ -5,7 +5,7 @@ if(isset($_GET['edit_cat'])){
 
 	$cat_id = $_GET['edit_cat']; 
 	
-	$get_cat = "select * from categories where cat_id='$cat_id'";
+	$get_cat = "SELECT * from categories where cat_id='$cat_id'";
 
 	$run_cat = mysqli_query($con, $get_cat); 
 	
